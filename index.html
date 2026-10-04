@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог фильмов 🎬</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="top-bar">
+            <div>
+                <button onclick="showSearchTab()">🔍 Поиск</button>
+                <button class="btn-gray" onclick="showFavTab()">⭐️ Избранное</button>
+            </div>
+            <button class="btn-gray" onclick="toggleTheme()">🌓 Тема</button>
+        </div>
+        
+
+        <div id="searchBlock">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Введите фильм (например, Matrix)...">
+                <button onclick="searchFilm()">Искать</button>
+            </div>
+
+            <h2 id="blockTitle">Результаты поиска</h2>
+            <h3 id="loadingText" style="display: none; color: #ff7e5f;">Загрузка...</h3>
+
+            <div class="movies-grid" id="moviesList"></div>
+
+            <div class="pagination" id="pagBlock" style="display: none;">
+                <button id="btnPrev" onclick="prevPage()">Назад</button>
+                <span id="pageNum">1</span>
+                <button id="btnNext" onclick="nextPage()">Вперед</button>
+            </div>
+        </div>
+
+        <div id="detailsBlock" style="display: none;">
+            <button class="btn-gray" onclick="closeDetails()" style="margin-bottom: 15px;">← Назад к списку</button>
+            <div class="details-box card" id="detailsContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
